@@ -1,79 +1,53 @@
 package com.shri.spring.ai.tripplanner.service.impl;
 
+import com.shri.spring.ai.tripplanner.config.OverpassQueries;
 import com.shri.spring.ai.tripplanner.dto.OverpassApiResponse;
 import com.shri.spring.ai.tripplanner.service.PlaceService;
+import com.shri.spring.ai.tripplanner.util.Location;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.StringSubstitutor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClient;
 
+import java.util.HashMap;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@EnableConfigurationProperties(OverpassQueries.class)
 public class PlaceServiceImpl implements PlaceService {
 
     private final RestClient restClient;
+    private final OverpassQueries overpassQueries;
 
-    @Value("${overpass.url}")
-    private String overpassUrl;
-    @Value("${overpass.country.body}")
-    private String overpassCountryBody;
-    @Value("${overpass.country.state.body}")
-    private String overpassCountryStateBody;
-    @Value("${overpass.country.state.city.body}")
-    private String overpassCountryStateCityBody;
-    @Value("${overpass.country.city.body}")
-    private String overpassCountryCityBody;
-    @Value("${overpass.state.body}")
-    private String overpassStateBody;
-    @Value("${overpass.state.city.body}")
-    private String overpassStateCityBody;
-    @Value("${overpass.city.body}")
-    private String overpassCityBody;
+    @Value("${default.noOfPlaces}")
+    private String defaultNoOfPlacesToSearch;
 
 
     @Override
     public OverpassApiResponse getPlaces(String country, String state, String city, String noOfPlaces) {
-        String requestBody = "";
-        if (StringUtils.isNotEmpty(country) && StringUtils.isNotEmpty(state) && StringUtils.isNotEmpty(city)) {
-            requestBody = overpassCountryStateCityBody
-                    .replace("{{country}}", country)
-                    .replace("{{state}}", state)
-                    .replace("{{city}}", city);
-        } else if (StringUtils.isNotEmpty(country) && StringUtils.isNotEmpty(state)) {
-            requestBody = overpassCountryStateBody
-                    .replace("{{country}}", country)
-                    .replace("{{state}}", state);
-        } else if (StringUtils.isNotEmpty(country) && StringUtils.isNotEmpty(city)) {
-            requestBody = overpassCountryCityBody
-                    .replace("{{country}}", country)
-                    .replace("{{city}}", city);
-        } else if (StringUtils.isNotEmpty(state) && StringUtils.isNotEmpty(city)) {
-            requestBody = overpassStateCityBody
-                    .replace("{{state}}", state)
-                    .replace("{{city}}", city);
-        } else if (StringUtils.isNotEmpty(country)) {
-            requestBody = overpassCountryBody
-                    .replace("{{country}}", country);
-        } else if (StringUtils.isNotEmpty(state)) {
-            requestBody = overpassStateBody
-                    .replace("{{state}}", state);
-        } else if (StringUtils.isNotEmpty(city)) {
-            requestBody = overpassCityBody
-                    .replace("{{city}}", city);
+        if (!StringUtils.isNumeric(noOfPlaces)) {
+            log.error("noOfPlaces must be numeric, falling back to default {}", defaultNoOfPlacesToSearch);
+            noOfPlaces = defaultNoOfPlacesToSearch;
         }
+        String template = getTemplate(country, state, city);
 
-        if (StringUtils.isEmpty(requestBody)) {
-            log.error("No location parameters provided, cannot build Overpass query.");
-            return null;
-        }
-        requestBody = requestBody.replace("{{noOfPlaces}}", noOfPlaces);
-        log.debug("Executing Overpass query: {}}", requestBody);
+        HashMap<String, String> valueMap = new HashMap<>();
+        valueMap.put("country", country);
+        valueMap.put("state", state);
+        valueMap.put("city", city);
+        valueMap.put("noOfPlaces", noOfPlaces);
+
+        StringSubstitutor sub = new StringSubstitutor(valueMap, "{{", "}}");
+        String requestBody = sub.replace(template);
+        log.debug("Executing Overpass query: \n{}", requestBody);
 
         /* *
          * curl --location 'https://overpass-api.de/api/interpreter' \
@@ -86,12 +60,30 @@ public class PlaceServiceImpl implements PlaceService {
         formData.add("data", requestBody);
 
         return restClient.post()
-                .uri(overpassUrl)
+                .uri(overpassQueries.url())
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .body(formData)
                 .retrieve()
                 .body(OverpassApiResponse.class);
 
+    }
+
+    private String getTemplate(String country, String state, String city) {
+
+        // switch expression (Java 14+) with pattern matching (Java 21)
+        return switch (new Location(country, state, city)) {
+            case Location(var c, var s, var ci) when StringUtils.isNotEmpty(c) && StringUtils.isNotEmpty(s) && StringUtils.isNotEmpty(ci) ->  overpassQueries.country().state().city().body();
+            case Location(var c, var s, _) when StringUtils.isNotEmpty(c) && StringUtils.isNotEmpty(s) ->  overpassQueries.country().state().body();
+            case Location(var c, _, var ci) when StringUtils.isNotEmpty(c) && StringUtils.isNotEmpty(ci) ->  overpassQueries.country().city().body();
+            case Location(_, var s, var ci) when StringUtils.isNotEmpty(s) && StringUtils.isNotEmpty(ci) ->  overpassQueries.state().city().body();
+            case Location(var c, _, _) when StringUtils.isNotEmpty(c) ->  overpassQueries.country().body();
+            case Location(_, var s, _) when StringUtils.isNotEmpty(s) ->  overpassQueries.state().body();
+            case Location(_, _, var ci) when StringUtils.isNotEmpty(ci) ->  overpassQueries.city().body();
+            default -> {
+                log.error("No valid combination of location parameters provided, cannot build Overpass query.");
+                throw new IllegalArgumentException("A valid combination of country, state, or city must be provided.");
+            }
+        };
     }
 }
 

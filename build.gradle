@@ -26,6 +26,7 @@ repositories {
 ext {
     set('springAiVersion', "1.0.0")
     set('commonsLang3Version', '3.14.0')
+    set('commonsTextVersion', '1.12.0')
 }
 
 dependencies {
@@ -34,6 +35,7 @@ dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
     compileOnly 'org.projectlombok:lombok'
     compileOnly "org.apache.commons:commons-lang3:${commonsLang3Version}"
+    implementation "org.apache.commons:commons-text:${commonsTextVersion}"
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

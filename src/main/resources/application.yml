@@ -4,6 +4,8 @@ spring:
 #  output:
 #    ansi:
 #      enabled: ALWAYS
+  config:
+    import: "classpath:overpass-queries.yml"
 
 
 default:
@@ -11,92 +13,6 @@ default:
   state: Uttar Pradesh
   city: Varanasi
   noOfPlaces: 5
-
-overpass:
-  url: https://overpass-api.de/api/interpreter
-  country:
-    body: |
-      [out:json];
-      area["name"="{{country}}"]->.country;
-      (
-        node["tourism"="attraction"](area.country);
-        way["tourism"="attraction"](area.country);
-        relation["tourism"="attraction"](area.country);
-      );
-      out {{noOfPlaces}} center;
-    state:
-      # Query for attractions in a state within a country
-      body: |
-        [out:json];
-        area["name"="{{country}}"]->.country;
-        area["name"="{{state}}"](area.country)->.searchArea;
-        (
-          node["tourism"="attraction"](area.searchArea);
-          way["tourism"="attraction"](area.searchArea);
-          relation["tourism"="attraction"](area.searchArea);
-        );
-        out {{noOfPlaces}} center;
-      city:
-        # Query for attractions in a city, within a state, within a country
-        body: |
-          [out:json];
-          area["name"="{{country}}"]->.country;
-          area["name"="{{state}}"](area.country)->.state;
-          area["name"="{{city}}"](area.state)->.searchArea;
-          (
-            node["tourism"="attraction"](area.searchArea);
-            way["tourism"="attraction"](area.searchArea);
-            relation["tourism"="attraction"](area.searchArea);
-          );
-          out {{noOfPlaces}} center;
-    city:
-      # Query for attractions in a city, within a country, within a country
-      body: |
-        [out:json];
-        area["name"="{{country}}"]->.country;
-        area["name"="{{city}}"](area.country)->.searchArea;
-        (
-          node["tourism"="attraction"](area.searchArea);
-          way["tourism"="attraction"](area.searchArea);
-          relation["tourism"="attraction"](area.searchArea);
-        );
-        out {{noOfPlaces}} center;
-  state:
-    # Query for attractions in a state within a country
-    body: |
-      [out:json];
-      area["name"="{{state}}"]->.searchArea;
-      (
-        node["tourism"="attraction"](area.searchArea);
-        way["tourism"="attraction"](area.searchArea);
-        relation["tourism"="attraction"](area.searchArea);
-      );
-      out {{noOfPlaces}} center;
-    city:
-      # Query for attractions in a city, within a state, within a country
-      body: |
-        [out:json];
-        area["name"="{{state}}"]->.state;
-        area["name"="{{city}}"](area.state)->.searchArea;
-        (
-          node["tourism"="attraction"](area.searchArea);
-          way["tourism"="attraction"](area.searchArea);
-          relation["tourism"="attraction"](area.searchArea);
-        );
-        out {{noOfPlaces}} center;
-  city:
-    # Query for attractions in a city, within a state, within a country
-    body: |
-      [out:json];
-      area["name"="{{city}}"]->.searchArea;
-      (
-        node["tourism"="attraction"](area.searchArea);
-        way["tourism"="attraction"](area.searchArea);
-        relation["tourism"="attraction"](area.searchArea);
-      );
-      out 5 center;
-#    [out:json];area["name"="Australia"]->.country;area["name"="Sydney"](area.country)->.searchArea;(node["tourism"="attraction"](area.searchArea);way["tourism"="attraction"](area.searchArea);relation["tourism"="attraction"](area.searchArea););out center 5;
-
 
 #logging:
 #  level:
