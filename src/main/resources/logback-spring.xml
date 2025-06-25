@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Include Spring Boot's default configurations -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- Define a custom log format for files (no color) -->
+<!--    <property name="LOG_PATTERN"-->
+<!--              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>-->
+
+<!--    &lt;!&ndash; Define a color-enabled log format for the console &ndash;&gt;-->
+<!--    <property name="CONSOLE_LOG_PATTERN"-->
+<!--              value="%clr(${LOG_PATTERN}){faint}"/>-->
+
+    <!-- Define a more colorful, granular pattern for the console -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){yellow} %clr([%thread]){faint} %clr(%-5level) %clr(%logger{36}){cyan} - %msg%n"/>
+    <!-- 1. Console Appender -->
+    <!-- This appender writes log messages to the console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- Use the color-enabled pattern here -->
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 2. Rolling File Appender (No changes here) -->
+    <!-- This appender writes logs to a file, with rotation policies -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/trip-planner.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logs/archived/trip-planner.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!--
+      LOGGER CONFIGURATION
+      Set logging levels for specific packages or classes.
+    -->
+
+    <!-- Set the level for your application's package -->
+    <!-- In your PlaceServiceImpl, log.debug() and log.info() will be visible -->
+    <logger name="com.shri.spring.ai.tripplanner" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <!-- Set a more verbose level for a specific class if needed -->
+    <logger name="com.shri.spring.ai.tripplanner.service.impl.PlaceServiceImpl" level="TRACE"/>
+
+    <!-- Quieter logging for noisy libraries -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+
+
+    <!--
+      ROOT LOGGER
+      This is the default logger for the entire application.
+      It will catch logs from any class not covered by a specific logger above.
+    -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

@@ -1,0 +1,16 @@
+### default request
+GET http://127.0.0.1:8080/api/v1/places
+
+<> 2025-06-25T041514.200.json
+
+### request with country/state/city
+@country = Australia
+@city = Sydney
+@state = New South Wales
+GET http://127.0.0.1:8080/api/v1/places?{{country}}&{{state}}&{{city}}
+
+<> 2025-06-26T021700.200.json
+
+
+###
+

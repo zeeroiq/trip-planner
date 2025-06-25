@@ -1,0 +1,93 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.7 375dc00a",
+  "osm3s": {
+    "timestamp_osm_base": "2025-06-24T20:15:34Z",
+    "timestamp_areas_base": "2025-06-24T15:14:27Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 13887214,
+      "lat": -33.8597064,
+      "lon": 151.2225650,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "direction": "0",
+        "historic": "memorial",
+        "material": "stone",
+        "memorial": "stone",
+        "name": "Mrs Macquarie's Chair",
+        "name:zh": "麥格理夫人椅",
+        "tourism": "attraction",
+        "wikidata": "Q14934922"
+      }
+    },
+    {
+      "type": "node",
+      "id": 20958880,
+      "lat": -33.8730636,
+      "lon": 151.1925718,
+      "tags": {
+        "addr:postcode": "2009",
+        "name": "Sydney Fish Market",
+        "name:ja": "フィッシュマーケット",
+        "name:zh": "悉尼鱼市场",
+        "tourism": "attraction",
+        "website": "https://www.sydneyfishmarket.com.au/",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 21397908,
+      "lat": -33.8753099,
+      "lon": 151.2222336,
+      "tags": {
+        "advertising": "billboard",
+        "alt_name": "The Coke Sign",
+        "direction": "282",
+        "luminous": "yes",
+        "message": "commercial",
+        "name": "Coca-Cola Billboard",
+        "sides": "1",
+        "support": "wall_mounted",
+        "tourism": "attraction",
+        "visibility": "area",
+        "wikidata": "Q5139093",
+        "wikipedia": "en:Coca-Cola billboard"
+      }
+    },
+    {
+      "type": "node",
+      "id": 25843272,
+      "lat": -33.8675516,
+      "lon": 151.1995619,
+      "tags": {
+        "name": "Darling Harbour",
+        "name:aus": "Tumbalong",
+        "name:etymology": "Governor Ralph Darling",
+        "natural": "bay",
+        "ref:nswgnb": "82284",
+        "source:name:aus": "nswgnb",
+        "tourism": "attraction",
+        "wheelchair": "yes",
+        "wikidata": "Q54488",
+        "wikipedia": "en:Darling Harbour"
+      }
+    },
+    {
+      "type": "node",
+      "id": 130018662,
+      "lat": -33.7725420,
+      "lon": 151.2371082,
+      "tags": {
+        "name": "The Rock",
+        "source": "local knowledge",
+        "tourism": "attraction"
+      }
+    }
+  ]
+}
