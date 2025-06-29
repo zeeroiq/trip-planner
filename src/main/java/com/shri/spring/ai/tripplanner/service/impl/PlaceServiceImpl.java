@@ -1,7 +1,7 @@
 package com.shri.spring.ai.tripplanner.service.impl;
 
 import com.shri.spring.ai.tripplanner.config.OverpassQueries;
-import com.shri.spring.ai.tripplanner.dto.OverpassApiResponse;
+import com.shri.spring.ai.tripplanner.dto.overpass.OverpassApiResponse;
 import com.shri.spring.ai.tripplanner.service.PlaceService;
 import com.shri.spring.ai.tripplanner.util.Location;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringSubstitutor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -24,7 +23,7 @@ import java.util.HashMap;
 @EnableConfigurationProperties(OverpassQueries.class)
 public class PlaceServiceImpl implements PlaceService {
 
-    private final RestClient restClient;
+    private final RestClient overpassRestClient;
     private final OverpassQueries overpassQueries;
 
     @Value("${default.noOfPlaces}")
@@ -59,9 +58,7 @@ public class PlaceServiceImpl implements PlaceService {
         MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
         formData.add("data", requestBody);
 
-        return restClient.post()
-                .uri(overpassQueries.url())
-                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+        return overpassRestClient.post()
                 .body(formData)
                 .retrieve()
                 .body(OverpassApiResponse.class);

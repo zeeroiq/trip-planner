@@ -1,4 +1,4 @@
-package com.shri.spring.ai.tripplanner.dto;
+package com.shri.spring.ai.tripplanner.dto.overpass;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

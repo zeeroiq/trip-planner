@@ -1,6 +1,6 @@
 package com.shri.spring.ai.tripplanner.controller;
 
-import com.shri.spring.ai.tripplanner.dto.OverpassApiResponse;
+import com.shri.spring.ai.tripplanner.dto.overpass.OverpassApiResponse;
 import com.shri.spring.ai.tripplanner.service.PlaceService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

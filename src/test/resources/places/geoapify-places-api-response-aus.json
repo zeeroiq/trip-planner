@@ -1,0 +1,341 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A Human Scale",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "municipality": "Council of the City of Sydney",
+        "postcode": "2000",
+        "district": "Sydney CBD",
+        "neighbourhood": "Quay Quarter",
+        "suburb": "Sydney",
+        "street": "Lee's Court",
+        "iso3166_2": "AU-NSW",
+        "lon": 151.2088275,
+        "lat": -33.8682713,
+        "state_code": "NSW",
+        "formatted": "A Human Scale, Lee's Court, Sydney NSW 2000, Australia",
+        "address_line1": "A Human Scale",
+        "address_line2": "Lee's Court, Sydney NSW 2000, Australia",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "A Human Scale",
+            "osm_id": 12169202887,
+            "tourism": "artwork",
+            "material": "synthetic polymer resin;aluminium;LEDs",
+            "osm_type": "n",
+            "start_date": 2014,
+            "artist_name": "Emily Floyd",
+            "artwork_type": "installation"
+          }
+        },
+        "artwork": {
+          "artist_name": "Emily Floyd",
+          "artwork_type": "installation",
+          "start_date": 2014
+        },
+        "distance": 73,
+        "place_id": "512d6002b7aee6624059dd0f928323ef40c0f00103f901c74c57d50200000092030d412048756d616e205363616c65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2088275,
+          -33.86827129966671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Continuum",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "municipality": "Council of the City of Sydney",
+        "postcode": "2000",
+        "district": "Sydney CBD",
+        "neighbourhood": "Quay Quarter",
+        "suburb": "Sydney",
+        "street": "Martin Place",
+        "iso3166_2": "AU-NSW",
+        "lon": 151.2100378,
+        "lat": -33.8679822,
+        "state_code": "NSW",
+        "formatted": "Continuum, Martin Place, Sydney NSW 2000, Australia",
+        "address_line1": "Continuum",
+        "address_line2": "Martin Place, Sydney NSW 2000, Australia",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details",
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Continuum",
+            "osm_id": 12143096826,
+            "tourism": "artwork",
+            "website": "https://www.mikaladwyer.com/continuum",
+            "osm_type": "n",
+            "panoramax": "db5d2bb5-ca63-4cec-b71c-4b21542235e6",
+            "start_date": 2024,
+            "artist_name": "Mikala Dwyer",
+            "artwork_type": "mosaic",
+            "artist:wikidata": "Q50098786"
+          }
+        },
+        "website": "https://www.mikaladwyer.com/continuum",
+        "artwork": {
+          "artist_name": "Mikala Dwyer",
+          "artist_details": {
+            "wikidata": "Q50098786"
+          },
+          "artwork_type": "mosaic",
+          "start_date": 2024
+        },
+        "distance": 114,
+        "place_id": "51903d31a1b8e6624059078a6c0a1aef40c0f00103f901faf3c8d302000000920309436f6e74696e75756d"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2100378,
+          -33.867982199666635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Muru Giligu - Path of Light",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "municipality": "Council of the City of Sydney",
+        "postcode": "2000",
+        "district": "Sydney CBD",
+        "neighbourhood": "Quay Quarter",
+        "suburb": "Sydney",
+        "street": "Martin Place",
+        "iso3166_2": "AU-NSW",
+        "lon": 151.2101092682917,
+        "lat": -33.8674173,
+        "state_code": "NSW",
+        "formatted": "Muru Giligu - Path of Light, Martin Place, Sydney NSW 2000, Australia",
+        "address_line1": "Muru Giligu - Path of Light",
+        "address_line2": "Martin Place, Sydney NSW 2000, Australia",
+        "categories": [
+          "tourism",
+          "tourism.attraction",
+          "tourism.attraction.artwork"
+        ],
+        "details": [
+          "details",
+          "details.artwork"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Muru Giligu - Path of Light",
+            "layer": -3,
+            "level": -3,
+            "osm_id": 1315435179,
+            "tourism": "artwork",
+            "website": "https://www.1elizabeth.com.au/the-precinct/public-art/muru-giligu.html",
+            "osm_type": "w",
+            "panoramax": "536934fa-947c-4232-947d-44b9fdcc2695",
+            "description": "Light & sound art installation.",
+            "artwork_type": "installation"
+          }
+        },
+        "website": "https://www.1elizabeth.com.au/the-precinct/public-art/muru-giligu.html",
+        "description": "Light & sound art installation.",
+        "artwork": {
+          "artwork_type": "installation"
+        },
+        "distance": 135,
+        "place_id": "51c67c1237b9e6624059b806b38707ef40c0f00102f901abf2674e0000000092031b4d7572752047696c696775202d2050617468206f66204c69676874"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.21010926829166,
+          -33.867417299666556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black & White 4d Milk Bar",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "municipality": "Council of the City of Sydney",
+        "postcode": "2000",
+        "district": "Sydney CBD",
+        "neighbourhood": "Quay Quarter",
+        "suburb": "Sydney",
+        "street": "Martin Place",
+        "iso3166_2": "AU-NSW",
+        "lon": 151.2091219,
+        "lat": -33.8675018,
+        "state_code": "NSW",
+        "formatted": "Black & White 4d Milk Bar, Martin Place, Sydney NSW 2000, Australia",
+        "address_line1": "Black & White 4d Milk Bar",
+        "address_line2": "Martin Place, Sydney NSW 2000, Australia",
+        "categories": [
+          "tourism",
+          "tourism.sights",
+          "tourism.sights.memorial"
+        ],
+        "details": [
+          "details.historic"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Black & White 4d Milk Bar",
+            "osm_id": 12264988431,
+            "historic": "memorial",
+            "memorial": "plaque",
+            "osm_type": "n",
+            "panoramax": "a68512d7-5537-4305-a1a3-4178a624ce85",
+            "inscription": "Black & White 4d Milk Bar  The world's first modern milk bar, established by Mick Adams (Joachim Tavlaridis) in 1932, stood west of this plaque"
+          }
+        },
+        "historic": {
+          "type": "memorial",
+          "memorial": "plaque",
+          "inscription": "Black & White 4d Milk Bar  The world's first modern milk bar, established by Mick Adams (Joachim Tavlaridis) in 1932, stood west of this plaque"
+        },
+        "distance": 145,
+        "place_id": "51142c6920b1e6624059fe64894c0aef40c0f00103f9010fdf0cdb02000000920319426c61636b2026205768697465203464204d696c6b20426172"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2091219,
+          -33.867501799666556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sydney Tower",
+        "country": "Australia",
+        "country_code": "au",
+        "state": "New South Wales",
+        "city": "Sydney",
+        "municipality": "Council of the City of Sydney",
+        "postcode": "2000",
+        "district": "Sydney CBD",
+        "neighbourhood": "Koreatown",
+        "suburb": "Sydney",
+        "street": "Market Street",
+        "iso3166_2": "AU-NSW",
+        "lon": 151.2089471247781,
+        "lat": -33.87049945,
+        "state_code": "NSW",
+        "formatted": "Sydney Tower, Market Street, Sydney NSW 2000, Australia",
+        "address_line1": "Sydney Tower",
+        "address_line2": "Market Street, Sydney NSW 2000, Australia",
+        "categories": [
+          "man_made",
+          "man_made.tower",
+          "tourism",
+          "tourism.attraction",
+          "tourism.sights",
+          "tourism.sights.tower",
+          "wheelchair",
+          "wheelchair.yes"
+        ],
+        "details": [
+          "details",
+          "details.facilities",
+          "details.wiki_and_media"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "url": "https://www.openstreetmap.org/copyright",
+          "raw": {
+            "name": "Sydney Tower",
+            "layer": 2,
+            "height": 270,
+            "osm_id": 197801072,
+            "tourism": "attraction",
+            "alt_name": "Sydney Tower Eye",
+            "man_made": "tower",
+            "osm_type": "w",
+            "wikidata": "Q827268",
+            "direction": "0-360",
+            "wikipedia": "en:Sydney Tower",
+            "min_height": 240,
+            "tower:type": "observation",
+            "wheelchair": "yes",
+            "building:part": "yes",
+            "building:colour": "gold",
+            "building:levels": 4,
+            "building:material": "glass"
+          }
+        },
+        "name_other": {
+          "alt_name": "Sydney Tower Eye"
+        },
+        "facilities": {
+          "wheelchair": true
+        },
+        "wiki_and_media": {
+          "wikidata": "Q827268",
+          "wikipedia": "en:Sydney Tower"
+        },
+        "distance": 176,
+        "place_id": "517c70e1b1afe6624059cac0a5866cef40c0f00102f9017034ca0b0000000092030c5379646e657920546f776572"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.2089471247781,
+          -33.87049944966709
+        ]
+      }
+    }
+  ]
+}

@@ -1,11 +1,22 @@
 spring:
   application:
     name: trip-planner
-#  output:
+  threads:
+    virtual:
+      enabled: true
+  #  output:
 #    ansi:
 #      enabled: ALWAYS
   config:
     import: "classpath:overpass-queries.yml"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 
 
 default:
@@ -14,6 +25,13 @@ default:
   city: Varanasi
   noOfPlaces: 5
 
+api:
+  openmeteo:
+    url: https://api.open-meteo.com/v1
+  wikidata:
+    url: https://www.wikidata.org/w/api.php
+  wikimedia:
+    url: https://commons.wikimedia.org/wiki/Special:FilePath
 #logging:
 #  level:
 #    root: INFO

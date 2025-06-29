@@ -1,0 +1,522 @@
+{
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5107e4ef9da71870278d64f1c36965a7f3fe9e56",
+          "datavalue": {
+            "value": {
+              "latitude": -33.85946667,
+              "longitude": 151.22220278,
+              "altitude": null,
+              "precision": 2.77777777778e-6,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q14934922$6BB3A09B-D4B0-4B53-A038-11EA5152AD6D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "bb52b760e8524517cf325d6b998d23b3e8cdd5c2",
+          "datavalue": {
+            "value": "Mrs Macquarie's Chair 2013.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q14934922$087E9A75-CA9F-42DC-BC94-3BB55A437A29",
+        "rank": "preferred",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "91257a11832929ba926cb34a1f9893daab19a376",
+          "datavalue": {
+            "value": "Mrsmaquarieschair.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q14934922$C4321B67-4C28-4F36-80DD-939851639373",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "adc0e190589edd6fa576855d6786132a95a32c3b",
+          "datavalue": {
+            "value": "Mrs Macquarie's Chair",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q14934922$6FF5171A-2566-493E-992A-4C3A9E48C01D",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "fca6b6d5b31e18781b129707b175ad018815c727",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3224,
+              "id": "Q3224"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$5A0B2A32-6A8F-4589-ABEC-098BE6AADA92",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "47a4df2f191b139665df3bd52a8081d3e7303b3e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 408,
+              "id": "Q408"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$46A45838-FA97-4ACF-BADB-2A0B91F2BB4C",
+        "rank": "normal"
+      }
+    ],
+    "P3794": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3794",
+          "hash": "1b3d39d5f83b98f26b5a3aa296949e79e37b6599",
+          "datavalue": {
+            "value": "place/mrs_macquaries_chair",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q14934922$EDE2BCCC-C94F-4273-BF66-E4A5893B6894",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "9097091334acd66e9ab35a4144605e2860e074ae",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 844407,
+              "id": "Q844407"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$8E90E9CF-3FF6-4255-A895-758AF2F65B02",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "af2023117974e3ad5222acdd0d775200059769fe",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "a15c3924ef8e39d94b73b48d6e1e8e077952e856",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Mrs_Macquarie's_Chair&oldid=859858580",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3134": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3134",
+          "hash": "91e8a7b2d389a211e77d78a59041dcc035904810",
+          "datavalue": {
+            "value": "556265",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q14934922$10D5C2BE-DE64-483B-BB4D-7EFFE46B265B",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e5000d789cd1b7f07a1e01ec9657b29de6070f9c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 204776,
+              "id": "Q204776"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$98b91e2b-4e6a-983d-e3fa-02b7360d0a83",
+        "rank": "normal"
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "009deb35d1c3ae5fa70cb85742efb2178286cfed",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13085,
+              "id": "Q13085"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$6c6dfdde-475f-2a09-03ea-3e2c99a73f5e",
+        "rank": "normal"
+      }
+    ],
+    "P1566": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1566",
+          "hash": "b77020fc58e4adebf8ea68529d2ed16c390d9662",
+          "datavalue": {
+            "value": "6618741",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q14934922$BAE41E22-2636-49C0-B1CD-5711282D83E0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bd49d3e4f67bc460ce7a06b6ac3027347cf5ee55",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e84b0343e79e2a9aa8abadd7301051e15fba52d6",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 169514,
+                      "id": "Q169514"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2044": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2044",
+          "hash": "80577c1f9d7c56d8d950f8b1c8a8696b45a5a773",
+          "datavalue": {
+            "value": {
+              "amount": "+18",
+              "unit": "http://www.wikidata.org/entity/Q11573"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q14934922$A075B237-0840-4D18-B641-84061EFE122B",
+        "rank": "normal"
+      }
+    ],
+    "P206": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P206",
+          "hash": "968bd2451b94a6879f38ca9dfe8cc2bd8d8bf7c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 54504,
+              "id": "Q54504"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q14934922$11405E9D-737C-43DB-998B-CEA1EEFC98B9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b286e3cbf1974c49417e0b9390b9129fd924d890",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "424a74f6e56d2fc6b85584f9994fac069c682bc4",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Mrs_Macquarie's_Chair&oldid=909192983",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2795": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2795",
+          "hash": "a0095f859e420ecb336dea38273fb50af1026a21",
+          "datavalue": {
+            "value": {
+              "text": "just outside the gates of the Botanic Garden",
+              "language": "en"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q14934922$898C83CE-09CC-4BD4-AC9F-33F8BDA28E36",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5f6aa68031ad05618099f561bf936237ffec57ea",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "342852c6ea3be834528dad2b0808c542dc83626d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 19826574,
+                      "id": "Q19826574"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "d6cdf4e1b82aea607e7615d49da7d5f6335f4d3d",
+                  "datavalue": {
+                    "value": "https://en.wikivoyage.org/wiki/Sydney/City_Centre?oldid=3913866",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "e97e3d0a0cddbf6a55d066422c27371869bdcff2",
+          "datavalue": {
+            "value": "/m/07zzd0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q14934922$A6E79967-11CB-42C3-82D1-B2F830FF4427",
+        "rank": "normal"
+      }
+    ],
+    "P7772": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7772",
+          "hash": "0fffff2cd9c1c4d3bc2457f35afe580bb18a4443",
+          "datavalue": {
+            "value": "mrs-macquaries-chair-sydney-australia",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q14934922$09D4D7C7-B717-4083-BE6B-27472CA8D98E",
+        "rank": "normal"
+      }
+    ]
+  }
+}

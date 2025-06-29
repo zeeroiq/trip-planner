@@ -1,4 +1,4 @@
-package com.shri.spring.ai.tripplanner.dto;
+package com.shri.spring.ai.tripplanner.dto.overpass;
 
 import java.util.Map;
 
