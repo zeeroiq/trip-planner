@@ -24,7 +24,7 @@ public class PlaceController {
                                                          @RequestParam(value = "city", required = false, defaultValue = "${default.city}") String city,
                                                          @RequestParam(value = "noOfPlaces", required = false, defaultValue = "${default.noOfPlaces}") String noOfPlaces) {
 
-        log.debug("Retrieving places for country: {}, state: {}, city: {}", country, state, city);
+        log.debug("Retrieving place for country: {}, state: {}, city: {}", country, state, city);
         OverpassApiResponse places = placeService.getPlaces(country, state, city, noOfPlaces);
         return ResponseEntity.ok(places);
     }
