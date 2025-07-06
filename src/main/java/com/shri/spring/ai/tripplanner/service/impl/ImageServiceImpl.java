@@ -2,6 +2,7 @@ package com.shri.spring.ai.tripplanner.service.impl;
 
 import com.shri.spring.ai.tripplanner.dto.wikidata.ImageResource;
 import com.shri.spring.ai.tripplanner.dto.wikidata.WikidataApiResponse;
+import com.shri.spring.ai.tripplanner.errors.NoDataFoundException;
 import com.shri.spring.ai.tripplanner.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -73,7 +74,7 @@ public class ImageServiceImpl implements ImageService {
             // This gracefully handles HTTP errors like 404 Not Found
             log.error("Error fetching image '{}'. Status: {}, Body: {}",
                     imageName, e.getStatusCode(), e.getResponseBodyAsString());
-            return null;
+            throw new NoDataFoundException();
         }
     }
 }
