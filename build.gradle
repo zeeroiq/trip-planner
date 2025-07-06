@@ -52,3 +52,16 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += "--enable-preview"
+}
+
+tasks.withType(Test) {
+    jvmArgs += "--enable-preview"
+}
+
+// For the bootRun task in Spring Boot
+bootRun {
+    jvmArgs = ["--enable-preview"]
+}
