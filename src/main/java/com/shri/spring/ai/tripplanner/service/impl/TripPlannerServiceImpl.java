@@ -12,8 +12,10 @@ import com.shri.spring.ai.tripplanner.service.PlaceService;
 import com.shri.spring.ai.tripplanner.service.TripPlannerService;
 import com.shri.spring.ai.tripplanner.service.WeatherService;
 import io.micrometer.common.util.StringUtils;
+import io.micrometer.observation.annotation.Observed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -31,6 +33,10 @@ public class TripPlannerServiceImpl implements TripPlannerService {
     private final ImageService imageService;
     private final WeatherService weatherService;
 
+    @Value("${api.wikimedia.url}")
+    private String wikimediaUrl;
+
+    @Observed(name = "trip-planner-service")
     @Override
     public List<PlaceRecommendation> getPlaceRecommendation(String country, String state, String city, int noOfPlaces, String travelDate) {
 
@@ -75,6 +81,7 @@ public class TripPlannerServiceImpl implements TripPlannerService {
             }
 
             AtomicReference<ImageResource> imageResource = new AtomicReference<>();
+            AtomicReference<String> imageUrl = new AtomicReference<>();
             if (StringUtils.isNotEmpty(wikidataId)) {
                 WikidataApiResponse imageClaims = imageService.getImageClaims(wikidataId);
                 if (Objects.nonNull(imageClaims) && !CollectionUtils.isEmpty(imageClaims.claims())) {
@@ -83,7 +90,10 @@ public class TripPlannerServiceImpl implements TripPlannerService {
                             .filter(item -> item.rank().equals("preferred"))
                             .findFirst()
                             .map(item -> item.mainsnak().datavalue().value())
-                            .ifPresent(imageNode -> imageResource.set(imageService.getImage(String.valueOf(imageNode.textValue()))));
+                            .ifPresent(imageNode -> {
+                                imageResource.set(imageService.getImage(String.valueOf(imageNode.textValue())));
+                                imageUrl.set(wikimediaUrl.concat(String.valueOf(imageNode.textValue())));
+                            });
                 }
             } else {
                 log.error("Wikidata not available in overpass response for {} ", placeName);
@@ -94,6 +104,7 @@ public class TripPlannerServiceImpl implements TripPlannerService {
                     .place(place)
                     .weatherDetails(finalWeather)
                     .imageResource(imageResource.get())
+                    .imageUrl(imageUrl.get())
                     .build());
 
         });

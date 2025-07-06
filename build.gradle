@@ -33,6 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
+    implementation "org.springframework.boot:spring-boot-starter-aop"
     compileOnly 'org.projectlombok:lombok'
     compileOnly "org.apache.commons:commons-lang3:${commonsLang3Version}"
     implementation "org.apache.commons:commons-text:${commonsTextVersion}"

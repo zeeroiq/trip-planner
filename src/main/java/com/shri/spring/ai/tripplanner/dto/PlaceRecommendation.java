@@ -9,5 +9,6 @@ import lombok.Builder;
 @Builder
 public record PlaceRecommendation(@JsonProperty("place") OverpassApiResponse.PlaceElement place,
                                   @JsonProperty("imageResource") ImageResource imageResource,
+                                  @JsonProperty("imageUrl") String imageUrl,
                                   @JsonProperty("weatherDetails") OpenMeteoApiResponse weatherDetails) {
 }
