@@ -7,10 +7,104 @@ GET http://127.0.0.1:8080/api/v1/places
 @country = Australia
 @city = Sydney
 @state = New South Wales
-GET http://127.0.0.1:8080/api/v1/places?{{country}}&{{state}}&{{city}}
+GET http://127.0.0.1:8080/api/v1/places?country={{country}}&state={{state}}&city={{city}}
 
+<> 2025-06-30T015331.200.json
+<> 2025-06-30T010120.200.json
 <> 2025-06-26T021700.200.json
 
 
 ###
+# curl "https://api.open-meteo.com/v1/forecast?latitude=-33.8688&longitude=151.2093&hourly=temperature_2m,weathercode"
+GET https://api.open-meteo.com/v1/forecast?latitude=-33.8688&longitude=151.2093&hourly=temperature_2m,weathercode
 
+<> 2025-06-30T010301.200.json
+
+###
+
+GET http://127.0.0.1:8080/actuator/metrics/tripPlannerService
+
+<> 2025-06-30T013605.404.json
+
+###
+
+@lat=-33.8597064
+@lon=151.222565
+GET 127.0.0.1:8080/api/v1/weather?lat={{lat}}&lon={{lon}}
+
+<> 2025-06-30T015259.200.json
+
+###
+
+@wikidata=Q14934922
+GET http://127.0.0.1:8080/api/v1/images/claims?overpassWikidata={{wikidata}}
+
+<> 2025-06-30T023716.200.json
+
+###
+
+@imageName=Mrsmaquarieschair.jpg
+GET http://127.0.0.1:8080/api/v1/images/{{imageName}}
+
+>> {{$historyFolder}}/{{imageName}}
+
+<> Mrsmaquarieschair.jpg
+<> 2025-06-30T033826.200.jpeg
+<> 2025-06-30T030310.500.json
+
+### tripplanner with default
+
+GET http://127.0.0.1:8080/api/v1/travel-planner
+
+>> {{$historyFolder}}/defaultRequestResponse.json
+
+<> defaultRequestResponse.json
+
+### trip planner with country/state/city without date
+
+GET http://127.0.0.1:8080/api/v1/travel-planner?country={{country}}&state={{state}}&city={{city}}
+
+>> {{$historyFolder}}/trip-details-{{country}}.json
+
+<> trip-details-Australia-9.json
+
+
+### trip planner with country/state/city/date
+@travelDate=2025-07-07
+GET http://127.0.0.1:8080/api/v1/travel-planner?country={{country}}&state={{state}}&city={{city}}&travelDate={{travelDate}}
+
+>> {{$historyFolder}}/trip-details-{{country}}.json
+
+<> trip-details-Australia-8.json
+<> trip-details-Australia-7.json
+<> trip-details-Australia-6.json
+<> trip-details-Australia-5.json
+<> trip-details-Australia-4.json
+<> trip-details-Australia-3.json
+<> trip-details-Australia-2.json
+<> trip-details-Australia-1.json
+<> trip-details-Australia.json
+
+### actuator metrics
+GET http://localhost:8080/actuator/metrics
+
+>> {{$historyFolder}}/app-metrics.json
+
+<> app-metrics.json
+
+### trip-planner-service metrics
+@service = trip-planner-service
+GET http://localhost:8080/actuator/metrics/{{service}}
+
+>> {{$historyFolder}}/{{service}}-metrics.json
+
+<> trip-planner-service-metrics.json
+
+### trip-planner-service metrics with virtual threads
+GET http://localhost:8080/actuator/metrics/{{service}}
+
+>> {{$historyFolder}}/{{service}}-metrics-vt.json
+
+<> trip-planner-service-metrics-vt-2.json
+<> trip-planner-service-metrics-vt-1.json
+<> trip-planner-service-metrics-vt.json
