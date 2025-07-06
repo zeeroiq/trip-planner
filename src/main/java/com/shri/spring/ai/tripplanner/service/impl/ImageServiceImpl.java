@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
@@ -36,6 +39,7 @@ public class ImageServiceImpl implements ImageService {
                 .body(WikidataApiResponse.class);
     }
 
+    @Retryable(retryFor = {RestClientResponseException.class, NoDataFoundException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     @Override
     public ImageResource getImage(String imageName) {
 
@@ -76,5 +80,11 @@ public class ImageServiceImpl implements ImageService {
                     imageName, e.getStatusCode(), e.getResponseBodyAsString());
             throw new NoDataFoundException();
         }
+    }
+
+    @Recover
+    public ImageResource recover(Exception e, String imageName) {
+        log.info("Recovering from exception for image - {}", imageName);
+        return new ImageResource(new byte[0], MediaType.APPLICATION_OCTET_STREAM);
     }
 }
